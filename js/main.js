@@ -21,3 +21,10 @@ const fullPrice = kmNumber * priceMultiplier.toFixed(1);
 // stampa il risultato nella console 
 console.log (`Prezzo seza sconto: `,fullPrice);
 
+// se l'età del passeggero è <18 viene applicato uno sconto del 20% sul prezzo del biglietto calcolato in precedenza
+if (age < 18){
+    const discountPrice = fullPrice - (fullPrice * 0.2).toFixed(1);
+    console.log(`Prezzo scontato: `,discountPrice);
+    document.getElementById(`price`).innerHTML = discountPrice;
+}
+
