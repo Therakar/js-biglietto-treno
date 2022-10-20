@@ -17,20 +17,25 @@ document.getElementById(`age`).innerHTML = age;
 // assegna il valore 0.21 alla costante priceMultiplier
 const priceMultiplier = Number(0.21);
 // calcola il prezzo del biglietto moltiplicando il numero di km inseriti dall'utente per 0,21
-const fullPrice = kmNumber * priceMultiplier.toFixed(1);
+const fullPrice = (kmNumber * priceMultiplier).toFixed(2);
 // stampa il risultato nella console 
 console.log (`Prezzo seza sconto: `,fullPrice);
 
-// se l'età del passeggero è <18 viene applicato uno sconto del 20% sul prezzo del biglietto calcolato in precedenza
+/* 
+-Se l'età del passeggero è <18 viene applicato uno sconto del 20% sul prezzo del biglietto calcolato in precedenza
+-Se l'età del passeggero è >65 viene applicato uno sconto del 40% sul prezzo del biglietto calcolato in precedenza
+-Se l'età del passeggero è >= 18 e <= 65 non viene applicato nessuno sconto */
 if (age < 18){
-    const discountPrice = fullPrice - (fullPrice * 0.2).toFixed(2);
+    const discountPrice = (fullPrice - (fullPrice * 0.2)).toFixed(2);
     console.log(`Prezzo scontato: `,discountPrice);
     document.getElementById(`price`).innerHTML = discountPrice;
 
 } else if (age > 65){
-    const discountPrice = fullPrice - (fullPrice * 0.4).toFixed(2);
+    const discountPrice = (fullPrice - (fullPrice * 0.4)).toFixed(2);
     console.log(`Prezzo scontato: `,discountPrice);
     document.getElementById(`price`).innerHTML = discountPrice;
-} 
+} else {
+    document.getElementById(`price`).innerHTML = fullPrice;
+}
 
 
