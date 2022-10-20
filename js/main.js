@@ -14,3 +14,10 @@ console.log(`Età dell'utente: `,age);
 document.getElementById(`age`).innerHTML = age;
 
 
+// assegna il valore 0.21 alla costante priceMultiplier
+const priceMultiplier = Number(0.21);
+// calcola il prezzo del biglietto moltiplicando il numero di km inseriti dall'utente per 0,21
+const fullPrice = kmNumber * priceMultiplier.toFixed(1);
+// stampa il risultato nella console 
+console.log (`Prezzo seza sconto: `,fullPrice);
+
